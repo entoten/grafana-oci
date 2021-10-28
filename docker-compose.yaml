@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  grafana:
+    image: grafana/grafana:8.2.2
+    container_name: grafana
+    tty: true
+    ports:
+      - "8080:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_INSTALL_PLUGINS=mtanda-google-calendar-datasource,andig-darksky-datasource,ayoungprogrammer-finance-datasource,grafana-worldmap-panel,marcusolsson-gantt-panel
+#    volumes:
+#      -
+#    depends_on:
+#      - nginx
+#  nginx:
+#    build: ./nginx-ubuntu/
+#    container_name: nginx
+#    tty: true
+#    ports:
+#      - "8080:443"
+#    volumes:
+#      -
